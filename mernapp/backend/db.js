@@ -20,7 +20,7 @@ const mongoDB = async()=>{
                 }else{
                     // to check the data is recieved or not ?
 
-                    console.log(data);
+                    // console.log(data);
                 }
             });
     }
