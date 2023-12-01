@@ -8,10 +8,16 @@ const {body, validationResult} = require('express-validator');
 
 // now we check the req sent from the body full-fills our requirements <just like how we add "required in the entry field of passwords and emails";
 router.post("/creatuser", 
-body('username').isEmail(),
+body('email').isEmail(),
+body('name').isLength({min:5}),
 body('username').isLength({min:5})
 
 ,async(req,res)=>{
+
+    const errors =validationResult(req);
+    if(!errors.isEmpty()){
+        return res.status(400).json({errors:errors.array()});
+    }
 
     try {
         await User.create({
