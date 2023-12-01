@@ -12,13 +12,13 @@ export default function Carousel() {
                         </form>
                     </div>
                     <div className="carousel-item active">
-                        <img src="https://images.unsplash.com/photo-1571091655789-405eb7a3a3a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGJ1cmdlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80" className="d-block w-100 h-50" style={{ filter: "brightness(30%)" }} alt="burger" />
+                        <img src="https://source.unsplash.com/random/600x400/?burger" className="d-block w-100 h-50" style={{ filter: "brightness(30%)" }} alt="burger" />
                     </div>
                     <div className="carousel-item">
-                        <img src="https://cdn.pixabay.com/photo/2020/05/17/04/22/pizza-5179939_640.jpg" className="d-block w-100 h-50" style={{ filter: "brightness(30%)" }} alt="pizza" />
+                        <img src="https://source.unsplash.com/random/600x400/?pizza" className="d-block w-100 h-50" style={{ filter: "brightness(30%)" }} alt="pizza" />
                     </div>
                     <div className="carousel-item">
-                        <img src="https://images.alphacoders.com/130/1308370.jpg" className="d-block w-100 h-50" style={{ filter: "brightness(30%)" }} alt="pasta" />
+                        <img src="https://source.unsplash.com/random/600x400/?pasta" className="d-block w-100 h-50" style={{ filter: "brightness(30%)" }} alt="pasta" />
                     </div>
                     <div className="carousel-item active" >
                         <img src="https://source.unsplash.com/random/600x400/?biryani" className="d-block w-100  " style={{ filter: "brightness(30%)" }} alt="..." />
@@ -26,9 +26,7 @@ export default function Carousel() {
                     <div className="carousel-item active" >
                         <img src="https://source.unsplash.com/random/600x400/?curry" className="d-block w-100  " style={{ filter: "brightness(30%)" }} alt="..." />
                     </div>
-                    <div className="carousel-item active" >
-                        <img src="https://source.unsplash.com/random/600x400/?icecream" className="d-block w-100  " style={{ filter: "brightness(30%)" }} alt="..." />
-                    </div>
+                    
 
 
 
