@@ -8,9 +8,9 @@ const {body, validationResult} = require('express-validator');
 
 // now we check the req sent from the body full-fills our requirements <just like how we add "required in the entry field of passwords and emails";
 router.post("/creatuser", 
-body('email').isEmail(),
+body('email','Incorrect Email').isEmail(),
 body('name').isLength({min:5}),
-body('username').isLength({min:5})
+body('password','Incorrect Password').isLength({min:5})
 
 ,async(req,res)=>{
 
