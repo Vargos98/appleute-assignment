@@ -5,14 +5,14 @@ import Badge from 'react-bootstrap/Badge';
 
 export default function Navbar() {
     const navigate = useNavigate();
-    const handleLogout= ()=>{
+    const handleLogout = () => {
 
         localStorage.removeItem("authToken");
         navigate("/login");
 
     }
-    const handleMyCart= ()=>{
-        
+    const handleMyCart = () => {
+
     }
 
 
@@ -29,7 +29,7 @@ export default function Navbar() {
                             <li className="nav-item">
                                 <Link className="nav-link active text-dark bold fw-bold fs-5" aria-current="page" to="/">Home</Link>
                             </li>
-                            
+
                         </ul>
                         {(!localStorage.getItem("authToken")) ?
                             <div className='d-flex'>

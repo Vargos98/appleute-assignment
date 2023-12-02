@@ -94,9 +94,9 @@ export default function Home() {
                     {data.CategoryName}
                   </div>
                   <hr id="hr-success" style={{ height: "4px", backgroundImage: "-webkit-linear-gradient(left,rgb(0, 255, 137),rgb(0, 0, 0))" }} />
-                  
+
                   {/* search bar functionality  */}
-                  
+
                   {foodItem !== [] ? foodItem.filter(
                     (items) => (items.CategoryName === data.CategoryName) && (items.name.toLowerCase().includes(search.toLowerCase())))
                     .map(filterItems => {
@@ -106,7 +106,7 @@ export default function Home() {
                           <Card foodItem={filterItems}
                             // desc={filterItems.description} 
                             options={filterItems.options[0]}
-                            
+
                           ></Card>
                         </div>
                       )
