@@ -45,10 +45,10 @@ export default function Navbar() {
 
                             <div>
 
-                                <div className='btn bg-dark bg-gradient active text-white bold mx-2' to='/cart'>
+                                <Link className='btn bg-dark bg-gradient active text-white bold mx-2' to='/cart'>
                                     My Cart{" "}
                                     <Badge pill bg="danger">2</Badge>
-                                </div>
+                                </Link>
 
                                 <div className='btn bg-dark bg-gradient active text-white bold mx-2' onClick={handleLogout}>
                                     Logout
