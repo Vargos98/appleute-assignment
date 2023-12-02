@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { Link , useNavigate} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 export default function Login() {
 
 
 
 
   const [credentials, setcredentials] = useState({ email: "", password: "" });
- let navigate = useNavigate();
+  let navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch("http://localhost:5000/api/loginuser", {
@@ -23,7 +23,7 @@ export default function Login() {
     if (!json.success) {
       alert("Enter Valid Credentials");
     }
-    if(json.success){
+    if (json.success) {
       localStorage.setItem("authToken", json.authToken);
       console.log(localStorage.getItem("authToken"))
       navigate("/");
@@ -54,7 +54,7 @@ export default function Login() {
               <input type="password" className="form-control" name='password' value={credentials.password} onChange={onChange} id="exampleInputPassword1" />
             </div>
 
-            <button type="submit" className="btn btn-warning">Submit</button>
+            <button type="submit" className="btn btn-warning">Login</button>
             <Link to="/creatuser" className='m-3 btn btn-danger'>I'm a new user!</Link>
           </form>
         </div>
