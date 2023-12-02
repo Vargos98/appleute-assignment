@@ -11,6 +11,9 @@ export default function Navbar() {
         navigate("/login");
 
     }
+    const handleMyCart= ()=>{
+        
+    }
 
 
     return (
@@ -42,7 +45,7 @@ export default function Navbar() {
 
                             <div>
 
-                                <div className='btn bg-dark bg-gradient active text-white bold mx-2'>
+                                <div className='btn bg-dark bg-gradient active text-white bold mx-2' to='/cart'>
                                     My Cart{" "}
                                     <Badge pill bg="danger">2</Badge>
                                 </div>
