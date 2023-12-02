@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Card from '../components/Card'
-import Carousel from '../components/Carousel'
+
 
 
 export default function Home() {
@@ -43,7 +43,46 @@ export default function Home() {
   return (
     <div >
       <div> <Navbar />     </div>
-      <div> <Carousel />   </div>
+      <div>
+        <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel" style={{ objectFit: "contain !important" }}>
+          <div className="carousel-inner" id="carousel">
+            <div className='carousel-caption' style={{ "zIndex": "10" }}>
+              <div className="d-flex justify-content-center">
+                <input className="form-control me-2 text-white" type="search" placeholder="Search" aria-label="Search"
+                  value={search}
+                  onChange={(e) => {
+                    setSearch(e.target.value)
+                  }} />
+                {/* <button className="btn btn-outline-dark text-white bg-warning" type="submit">Search</button> */}
+              </div>
+            </div>
+            <div className="carousel-item active">
+              <img src="https://source.unsplash.com/random/600x400/?burger" className="d-block w-100 h-50" style={{ filter: "brightness(30%)" }} alt="burger" />
+            </div>
+            <div className="carousel-item">
+              <img src="https://source.unsplash.com/random/600x400/?pizza" className="d-block w-100 h-50" style={{ filter: "brightness(30%)" }} alt="pizza" />
+            </div>
+            <div className="carousel-item">
+              <img src="https://source.unsplash.com/random/600x400/?pasta" className="d-block w-100 h-50" style={{ filter: "brightness(30%)" }} alt="pasta" />
+            </div>
+            <div className="carousel-item active" >
+              <img src="https://source.unsplash.com/random/600x400/?biryani" className="d-block w-100  " style={{ filter: "brightness(30%)" }} alt="..." />
+            </div>
+            <div className="carousel-item active" >
+              <img src="https://source.unsplash.com/random/600x400/?curry" className="d-block w-100  " style={{ filter: "brightness(30%)" }} alt="..." />
+            </div>
+          </div>
+          <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+          {/* Added corousel back to Home.jsx as it is a single component and as react guidelines says every repeated code should be made as a sperate component */}
+        </div>
+      </div>
       <div className='container'> {/* boootstrap is mobile first */}
         {
           foodCat !== []
@@ -61,18 +100,24 @@ export default function Home() {
                       return (
                         <div key={filterItems.id} className='col-12 col-md-6 col-lg-3'>
                           {console.log(filterItems.url)}
-                          <Card foodName={filterItems.name} item={filterItems} options={filterItems.options[0]} ImgSrc={filterItems.img} ></Card>
+                          <Card
+                            foodName={filterItems.name}
+                            item={filterItems}
+                            // desc={filterItems.description} 
+                            options={filterItems.options[0]}
+                            imgSrc={filterItems.img}
+                          ></Card>
                         </div>
                       )
                     }) : <div> No Such Data </div>}
                 </div>
-            )
+              )
 
-          }) : ""
+            }) : ""
         }
 
 
-     
+
 
       </div>
       <div> <Footer />     </div>
