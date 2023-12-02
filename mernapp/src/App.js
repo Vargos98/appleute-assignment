@@ -11,12 +11,12 @@ import '../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle';
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
 import Signup from './screens/Signup.jsx';
-import { CartProvider } from './components/ContextReducer.jsx';
+// import { CartProvider } from './components/ContextReducer.jsx';
 
 export default function App() {
   return (
-    <CartProvider>
-      <Router>
+
+    <Router>
         <div>
           <Routes>
             <Route exact path='/' element={<Home />} />
@@ -25,7 +25,7 @@ export default function App() {
           </Routes>
         </div>
       </Router>
-    </CartProvider>
+    
 
 
   )

@@ -1,24 +1,26 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { useCart, useDispatchCart } from './ContextReducer';
+// import { useCart, useDispatchCart } from './ContextReducer';
 
 export default function Card(props) {
-let dispatch =useDispatchCart();
+// let dispatch =useDispatchCart();
 const priceRef =useRef();
-let data = useCart();
+// let data = useCart();
     let options = props.options;
     let priceOptions = Object.keys(options);
     const[qty,setQty] = useState(1);
     const[size,setSize] = useState("");
-    const handleAddToCart= async ()=>{
-        await dispatch({type:"ADD", id:props.foodItem._id, name:props.foodItem.name, price:finalPrice, qty:qty, size:size})
-        console.log(data);
-    }
+    // const handleAddToCart= async ()=>{
+    //     await dispatch({type:"ADD", id:props.foodItem._id, name:props.foodItem.name, price:finalPrice, qty:qty, size:size})
+    //     console.log(data);
+    // }
     let finalPrice = qty * parseInt(options[size]);
 
     useEffect(()=>{
         setSize(priceRef.current.value)
     },[]);
-
+    const addToCart = ()=>{
+        
+    }
     const handleQty = (e) => {
         setQty(e.target.value);
       }
@@ -51,7 +53,7 @@ let data = useCart();
                 </div>
               </div>
               <hr></hr>
-              <button className={`btn btn-warning justify-center ms-2 `} onClick={handleAddToCart}>Add to Cart</button>
+              <button className={`btn btn-warning justify-center ms-2 `} onClick={addToCart}>Add to Cart</button>
               {/* <button className={`btn btn-danger justify-center ms-2 ${btnEnable ? "" : "disabled"}`} onClick={handleRemoveCart}>Remove</button> */}
             </div>
           </div>
