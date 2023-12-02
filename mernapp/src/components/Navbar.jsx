@@ -29,10 +29,7 @@ export default function Navbar() {
                             <li className="nav-item">
                                 <Link className="nav-link active text-dark bold fw-bold fs-5" aria-current="page" to="/">Home</Link>
                             </li>
-                            {(localStorage.getItem("authToken")) ?
-                                <li className="nav-item">
-                                    <Link className="nav-link fs-5 mx-3 active text-dark fw-bold " aria-current="page" to="/" >My Orders</Link>  {/* index.css - nav-link color white */}
-                                </li> : ""}
+                            
                         </ul>
                         {(!localStorage.getItem("authToken")) ?
                             <div className='d-flex'>
